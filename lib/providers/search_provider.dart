@@ -24,11 +24,11 @@ class SearchData extends ChangeNotifier {
   void publishShortenUrl(String url) {
     print(url);
     try {
-      // urlService.createShortenUrl(url).then((Search value){
-      //   final search = Search();
-      //   _searches.add(value);
-      //   notifyListeners();
-      // });
+      urlService.createShortenUrl(url).then((Search value){
+         final search = Search();
+         _searches.add(value);
+         notifyListeners();
+       });
     } catch (e) {
       Exception('Cannot added shorten url');
     }
