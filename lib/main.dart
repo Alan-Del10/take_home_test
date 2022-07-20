@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import 'package:take_home_test/providers/search_provider.dart';
 import 'package:take_home_test/screens/search_screen.dart';
 
 void main() {
@@ -10,10 +11,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      color: Colors.purple,
-      title: 'Take-Home Test',
-      home: SearchScreen(),
+    return ChangeNotifierProvider(
+      create: (context) => SearchData(),
+      child: MaterialApp(
+        title: 'Take-Home Test',
+        home: SearchScreen(),
+      ),
     );
   }
 }
