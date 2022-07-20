@@ -4,19 +4,23 @@ import 'package:http/http.dart' as http;
 import 'package:take_home_test/models/search.dart';
 
 class UrlService {
-  final String _apiUrl = 'https://url-shortener-nu.herokuapp.com/api/alias';
+
+  final String _apiUrl = "https://url-shortener-nu.herokuapp.com/api/alias";
+
+  Map<String,String> _headers = {
+    'Content-type' : 'application/json',
+    'Accept': 'application/json',
+  };
 
   Future<Search> createShortenUrl(String url) async {
-    final u = Uri.https(_apiUrl, '/api/alias');
     final response = await http
-        .post(Uri.parse(_apiUrl), body: {'url' : url});
-    print(response.statusCode);
+        .post(Uri.parse(_apiUrl), headers: _headers, body: json.encode({"url" : "$url"}));
 
-    if (response.statusCode == 201) {
+    if (response.statusCode == 200) {
       // If the server did return a 201 OK response,
       // then parse the JSON.
-      print(Search.fromJson(jsonDecode(response.body)));
-      return Search.fromJson(jsonDecode(response.body));
+      final body = jsonDecode(response.body);
+      return Search.fromJson(body);
     } else {
       // If the server did not return a 200 OK response,
       // then throw an exception.

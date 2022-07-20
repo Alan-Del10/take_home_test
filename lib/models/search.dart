@@ -2,7 +2,7 @@ import 'links.dart';
 
 class Search {
   final String alias;
-  final List<Links> links;
+  final dynamic links;
 
   Search({this.alias = "", this.links});
 
@@ -11,5 +11,10 @@ class Search {
       alias: json['alias'],
       links: json['_links'],
     );
+  }
+
+  @override
+  String toString() {
+    return '${this.alias} ${this.links}';
   }
 }
