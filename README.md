@@ -4,7 +4,7 @@ My Flutter project for my NuBank Code Test
 
 By Alan Delgado.
 
-[My GitHub: ](https://github.com/Alan-Del10)
+[My GitHub](https://github.com/Alan-Del10)
 
 ## Getting Started
 
