@@ -33,7 +33,7 @@ class SearchData extends ChangeNotifier {
           notifyListeners();
         });
       } catch (e) {
-        Exception('Cannot added shorten url');
+        print('Cannot added shorten url');
       }
   }
 }

@@ -28,12 +28,13 @@ samples, guidance on mobile development, and a full API reference.
 ## Steps to run UI Testing
 
 Run those commands on the terminal in order to run the different tests:
--flutter test test/widgets/search_list_test.dart
 -flutter test test/widgets/search_tile_test.dart
 -flutter test test/widgets/search_field_test.dart
+-flutter test test/widgets/search_field_test_2.dart
 
 ## Steps to run Unit Testing
 
 Run those commands on the terminal in order to run the different tests:
 -flutter test test/services/url_service_test.dart
 -flutter test test/providers/search_provider_test.dart
+-flutter test test/providers/search_provider_test_2.dart

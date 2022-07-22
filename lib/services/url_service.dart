@@ -15,6 +15,9 @@ class UrlService {
   //@param String url
   //@return Search model json
   Future<Search> createShortenUrl(String url) async {
+    if (url.isEmpty || null == url)
+      throw Exception('Empty url!');
+
     final response = await http
         .post(Uri.parse(_apiUrl), headers: _headers, body: json.encode({"url" : "$url"}));
 
