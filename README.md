@@ -1,6 +1,10 @@
 # take_home_test
 
-A new Flutter project.
+My Flutter project for my NuBank Code Test
+
+By Alan Delgado.
+
+[My GitHub: ](https://flutter.dev/docs/cookbook)https://github.com/Alan-Del10)
 
 ## Getting Started
 
