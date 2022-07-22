@@ -1,6 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:take_home_test/models/search.dart';
 import 'package:take_home_test/providers/search_provider.dart';
 import 'package:take_home_test/widgets/search_tile.dart';
 import 'package:provider/provider.dart';
@@ -14,17 +13,25 @@ class SearchList extends StatelessWidget {
       builder: (context, searchData, child) {
         return searchData.searches.length > 0 ? ListView.builder(
           itemBuilder: (context, index) {
-            final search = searchData.searches[index];
-            final links = json.encode(search.links);
-            print('aqui ${json.encode(search.links['short'])}');
-            return SearchTile(
-              taskTitle: links[0],
+            Search search = searchData.searches[index];
+            return Card(
+              elevation: 12,
+              child: SearchTile(
+                alias: search.alias,
+                selfUrl: search.links.self,
+                shortUrl: search.links.short,
+              ),
             );
           },
           itemCount: searchData.searchesCount,
         ) : Container(
+          padding: EdgeInsets.only(top: 15.0),
           child: Text(
             'No Recent Searches',
+            style: TextStyle(
+              fontSize: 14.0,
+              color: Colors.black,
+            ),
           ),
         );
       },

@@ -1,17 +1,36 @@
 import 'package:flutter/material.dart';
 
 class SearchTile extends StatelessWidget {
-  final String taskTitle;
+  final String selfUrl;
+  final String shortUrl;
+  final String alias;
 
-  SearchTile({this.taskTitle});
+  SearchTile({this.selfUrl, this.shortUrl, this.alias});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(
-        taskTitle,
+      leading: const Icon(Icons.public_sharp),
+      title: Row(
+        children: [
+          Text(
+            selfUrl,
+            style: TextStyle(
+                fontSize: 18.0,
+            fontWeight: FontWeight.bold),
+          ),
+          Text(
+            ' - $alias',
+            style: TextStyle(
+                fontSize: 18.0),
+          ),
+        ],
+      ),
+      subtitle: Text(
+        shortUrl,
         style: TextStyle(
-            decoration: TextDecoration.lineThrough),
+          fontSize: 14.0
+        ),
       ),
     );
   }

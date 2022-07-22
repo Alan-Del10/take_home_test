@@ -2,14 +2,14 @@ import 'links.dart';
 
 class Search {
   final String alias;
-  final dynamic links;
+  final Links links;
 
-  Search({this.alias = "", this.links});
+  Search({this.alias, this.links});
 
   factory Search.fromJson(Map<String, dynamic> json) {
     return Search(
       alias: json['alias'],
-      links: json['_links'],
+      links: Links.fromJson(json['_links']),
     );
   }
 

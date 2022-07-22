@@ -10,4 +10,9 @@ class Links {
       short: json['short'],
     );
   }
+
+  @override
+  String toString() {
+    return '${this.self} ${this.short}';
+  }
 }
